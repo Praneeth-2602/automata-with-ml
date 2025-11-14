@@ -4,7 +4,7 @@ import re
 # --------------------------------------------------------
 # HARD-CODED CONFIG (you only change TARGET_REGEX)
 # --------------------------------------------------------
-TARGET_REGEX = r"^(?:a|b)*baa$"        # <--- PUT YOUR TARGET REGEX HERE
+TARGET_REGEX = r"^a(?:a|b)*a$"        # <--- PUT YOUR TARGET REGEX HERE
 ALPHABET = ["a", "b"]              # strict: only two symbols allowed
 NUM_POS = 300                      # number of positive samples
 NUM_NEG = 300                      # number of negative samples
