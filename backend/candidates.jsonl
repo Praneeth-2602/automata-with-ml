@@ -1,9 +1,11 @@
-{"regex": "^(?:a|b)*a(?:a|b)*$", "body": "(?:a|b)*a(?:a|b)*", "length": 17, "ops": 6, "kind": "concat"}
+{"regex": "^(?:a|b)*bb$", "body": "(?:a|b)*bb", "length": 10, "ops": 4, "kind": "concat"}
+{"regex": "^(?:a|b)*ab$", "body": "(?:a|b)*ab", "length": 10, "ops": 4, "kind": "concat"}
 {"regex": "^(?:a|b)*b(?:a|b)*$", "body": "(?:a|b)*b(?:a|b)*", "length": 17, "ops": 6, "kind": "concat"}
-{"regex": "^(?:a|b)*a$", "body": "(?:a|b)*a", "length": 9, "ops": 3, "kind": "concat"}
+{"regex": "^(?:a|b)*a(?:a|b)*$", "body": "(?:a|b)*a(?:a|b)*", "length": 17, "ops": 6, "kind": "concat"}
 {"regex": "^b(?:a|b)*$", "body": "b(?:a|b)*", "length": 9, "ops": 3, "kind": "concat"}
-{"regex": "^a(?:a|b)*$", "body": "a(?:a|b)*", "length": 9, "ops": 3, "kind": "concat"}
 {"regex": "^(?:a|b)*b$", "body": "(?:a|b)*b", "length": 9, "ops": 3, "kind": "concat"}
+{"regex": "^a(?:a|b)*$", "body": "a(?:a|b)*", "length": 9, "ops": 3, "kind": "concat"}
+{"regex": "^(?:a|b)*a$", "body": "(?:a|b)*a", "length": 9, "ops": 3, "kind": "concat"}
 {"regex": "^a$", "body": "a", "length": 1, "ops": 0, "kind": "union"}
 {"regex": "^a$", "body": "a", "length": 1, "ops": 0, "kind": "atom"}
 {"regex": "^b$", "body": "b", "length": 1, "ops": 0, "kind": "union"}

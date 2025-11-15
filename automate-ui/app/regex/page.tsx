@@ -73,7 +73,7 @@ export default function Page() {
                                 id="regex-select"
                                 value={selectedIndex}
                                 onChange={(e) => setSelectedIndex(Number(e.target.value))}
-                                className="mt-1 block w-full rounded-md border-gray-300 bg-white py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                className="mt-1 block w-full rounded-md border-gray-300 bg-white py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm text-black"
                             >
                                 {samples.map((s, i) => (
                                     <option key={i} value={i}>{s}</option>
@@ -177,12 +177,28 @@ export default function Page() {
                     <div className="mt-4 p-4 bg-gray-50 rounded-md border">
                         <h3 className="text-sm font-semibold text-gray-700">Metrics</h3>
                         <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                            {Object.entries(topCandidates[selectedIndex]).map(([k, v]) => (
-                                <div key={k} className="p-2 bg-white rounded border">
-                                    <div className="text-xs text-gray-500">{k}</div>
-                                    <div className="text-sm font-medium">{String(v)}</div>
-                                </div>
-                            ))}
+                            {(() => {
+                                const metricsOrder: { key: string; label: string }[] = [
+                                    { key: 'tp_val', label: 'TP' },
+                                    { key: 'tn_val', label: 'TN' },
+                                    { key: 'fp_val', label: 'FP' },
+                                    { key: 'fn_val', label: 'FN' },
+                                    { key: 'acc_val', label: 'Accuracy' },
+                                    { key: 'f1_val', label: 'F1' },
+                                    { key: 'score', label: 'Score' },
+                                ];
+                                const item = topCandidates[selectedIndex] || {};
+                                return metricsOrder.map(({ key, label }) => {
+                                    const raw = item[key];
+                                    const display = raw === undefined || raw === null ? '-' : String(raw);
+                                    return (
+                                        <div key={key} className="p-2 bg-white rounded border">
+                                            <div className="text-xs text-gray-700">{label}</div>
+                                            <div className="text-sm font-medium text-black">{display}</div>
+                                        </div>
+                                    );
+                                });
+                            })()}
                         </div>
                     </div>
                 )}
